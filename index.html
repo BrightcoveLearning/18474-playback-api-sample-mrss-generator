@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Playback API: MRSS Generator</title>
+  
+  
+  <link rel='stylesheet' href='https://learning-services-media.brightcove.com/doc-assets/js/rome/rome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <fieldset class="bcls-fieldset"><legend>Input</legend>
+
+<p>If you do not enter account information, a Brightcove sample account will be used.</p>
+
+<p>Account id: <input id="account_id" type="text" value="" placeholder="1752604059001" /></p>
+
+<p>Policy key: <input id="policy_key" type="text" size="60" value="" placeholder="BCpkADawqM2KZhoCftdQooqAvN7vGBxeWbqhorS9KciUZ92NYSveS_vZpn" /></p>
+
+<p>Feed title: <input type="text" id="feedTitle" value="MRSS Feed" /></p>
+
+<p>Feed description: <input type="text" id="feedDescription" value="My MRSS Feed" /></p>
+
+<p>Number of videos to include: <select name="numberSelect" id="numberSelect" style="width:100px;"><option value="25" selected="selected">25</option><option value="50">50</option><option value="100">100</option> <!-- <option value="all">all</option> --></select></p>
+
+<p>Search string to select videos (optional - see <a href="/node/18005">Search for Videos</a>) <input id="searchStr" type="text" placeholder="tags:foo" /></p>
+
+<p>Sort by: <select name="sortSelect" id="sortSelect" style="width:150px;"><option value="updated_at" selected="selected">Date last updated</option><option value="created_at">Date added</option></select><select name="directionSelect" id="directionSelect" style="width:120px;"><option value="-" selected="selected">descending</option><option value="">ascending</option></select></p>
+<table class="bcls-table">
+	<caption>Limit search by dates:</caption>
+	<tbody>
+		<tr>
+			<td>Date type</td>
+			<td>From date</td>
+			<td>To date</td>
+		</tr>
+		<tr>
+			<td><select class="date-field" id="dateRangeType" style="width:200px;font-size:1.3rem;"><option value="created_at" selected="selected">created_at</option><option value="updated_at">updated_at</option><option value="published_at">published_at</option><option value="schedule.starts_at">schedule.starts_at</option><option value="schedule.ends_at">schedule.ends_at</option> </select></td>
+			<td><input id="fromDate" class="date-field" style="width:200px;font-size:1.3rem;" /></td>
+			<td><input id="toDate" class="date-field" style="width:200px;font-size:1.3rem;" /></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><button class="bcls-button" id="makeFeed">Generate the Feed</button></p>
+</fieldset>
+
+<fieldset class="bcls-fieldset"><legend>Output</legend>
+
+<p id="logger" style="color:rgb(237, 104, 38)">Waiting for input...</p>
+
+<p>Current API request</p>
+
+<pre>
+<code id="apiRequest">API request will appear here...</code></pre>
+
+<p>Generated MRSS feed</p>
+<textarea id="feedDisplay" style="width:95%;height:30em;"></textarea></fieldset>
+  <script src='https://learning-services-media.brightcove.com/doc-assets/js/rome/rome.min.js'></script>
+<script src='https://learning-services-media.brightcove.com/doc-assets/node/18474-playback-api-sample-mrss-generator/vkbeautify.0.99.00.beta.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
